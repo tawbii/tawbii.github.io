@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Tawbi — Software Engineer</title>
+<meta name="description" content="Portfolio of Ali Tawbi, a 42 Beirut software engineering student: shells, servers, raycasters, concurrency and full-stack web.">
+<meta property="og:title" content="Ali Tawbi — Software Engineer">
+<meta property="og:description" content="Systems programming in C and C++, plus full-stack web with NestJS and React.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%237c5cff'/><stop offset='1' stop-color='%2321d4fd'/></linearGradient></defs><rect width='64' height='64' rx='16' fill='url(%23g)'/><text x='32' y='43' font-family='sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'>AT</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Ali Tawbi, home">AT<span>.</span></a>
+  <nav aria-label="Primary">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="https://github.com/tawbii" rel="noopener">GitHub</a>
+  </nav>
+  <button id="theme" class="icon-btn" type="button" aria-label="Toggle light and dark theme">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <p class="eyebrow">Software engineering student · 42 Beirut</p>
+    <h1>I build things that<br><span class="grad">sit close to the machine.</span></h1>
+    <p class="lede">Shells, servers, raycasters and thread schedulers in C and C++, and a full-stack real-time web app in TypeScript. I like understanding how things work all the way down.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See my work</a>
+      <a class="btn" href="https://github.com/tawbii" rel="noopener">github.com/tawbii</a>
+    </div>
+    <ul class="stats" aria-label="At a glance">
+      <li><strong>8</strong><span>projects</span></li>
+      <li><strong>C · C++</strong><span>systems</span></li>
+      <li><strong>TS</strong><span>full-stack</span></li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="c" type="button">C</button>
+        <button class="chip" data-filter="cpp" type="button">C++</button>
+        <button class="chip" data-filter="web" type="button">Web &amp; DevOps</button>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <article class="card featured" data-cat="web">
+        <div class="card-top"><span class="kind">Full-stack · Team of 4</span></div>
+        <h3>Connect Four <small>ft_transcendence</small></h3>
+        <p>Real-time multiplayer web game with server-side move validation, 3 AI levels, 4-player tournaments, friends and private chat, 2FA, and an English / French / Arabic (RTL) interface. I was technical lead and built the backend core: auth, game engine, Socket.IO layer, AI and tournaments.</p>
+        <ul class="tags"><li>NestJS</li><li>React 19</li><li>TypeScript</li><li>PostgreSQL</li><li>Socket.IO</li><li>Docker</li></ul>
+        <a class="link" href="https://github.com/tawbii/transcendence" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="c">
+        <div class="card-top"><span class="kind">C · Unix</span></div>
+        <h3>Minishell</h3>
+        <p>A Bash-like shell with pipes, redirections (<code>&lt;</code> <code>&gt;</code> <code>&gt;&gt;</code> <code>&lt;&lt;</code>), quote handling, <code>$VAR</code> and <code>$?</code> expansion, signals and seven builtins.</p>
+        <ul class="tags"><li>fork / exec</li><li>pipes</li><li>readline</li><li>signals</li></ul>
+        <a class="link" href="https://github.com/tawbii/Minishell" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="c">
+        <div class="card-top"><span class="kind">C · Graphics</span></div>
+        <h3>Cub3D</h3>
+        <p>A Wolfenstein-style first-person renderer using DDA raycasting, textured walls per orientation, collision detection, mouse and keyboard look, and strict <code>.cub</code> parsing with flood-fill map validation.</p>
+        <ul class="tags"><li>raycasting</li><li>MiniLibX</li><li>X11</li><li>math</li></ul>
+        <a class="link" href="https://github.com/tawbii/Cub3d-" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="cpp">
+        <div class="card-top"><span class="kind">C++98 · Networking</span></div>
+        <h3>ft_irc</h3>
+        <p>An IRC server driven by a single non-blocking <code>poll()</code> loop. Handles registration, channels, operators and modes, with per-client buffering. Tested with irssi, HexChat and <code>nc</code>.</p>
+        <ul class="tags"><li>sockets</li><li>poll()</li><li>IRC protocol</li></ul>
+        <a class="link" href="https://github.com/tawbii/irc" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="c">
+        <div class="card-top"><span class="kind">C · Concurrency</span></div>
+        <h3>Philosophers</h3>
+        <p>The dining philosophers problem with pthreads and mutexes. Deadlock avoided by ordered locking, a monitor thread for deaths and meal counts, and race-free logging with precise timing.</p>
+        <ul class="tags"><li>pthreads</li><li>mutexes</li><li>deadlock</li><li>timing</li></ul>
+        <a class="link" href="https://github.com/tawbii/philosophers" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="web">
+        <div class="card-top"><span class="kind">DevOps · Docker</span></div>
+        <h3>Inception</h3>
+        <p>A small web infrastructure built from custom Alpine images: NGINX with TLS in front of WordPress + php-fpm and MariaDB, wired together with Docker Compose, secrets and volumes.</p>
+        <ul class="tags"><li>Docker Compose</li><li>NGINX</li><li>MariaDB</li><li>TLS</li></ul>
+        <a class="link" href="https://github.com/tawbii/inception" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="cpp">
+        <div class="card-top"><span class="kind">C++ · STL</span></div>
+        <h3>CPP Module 09</h3>
+        <p>Choosing the right container for the job: a Bitcoin exchange-rate lookup, a reverse-Polish-notation calculator, and PmergeMe, a merge-insertion sort compared across containers.</p>
+        <ul class="tags"><li>STL</li><li>map</li><li>stack</li><li>vector / deque</li></ul>
+        <a class="link" href="https://github.com/tawbii/CPP09" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-cat="c">
+        <div class="card-top"><span class="kind">C · Game</span></div>
+        <h3>so_long</h3>
+        <p>A 2D tile-based game on MiniLibX: map file parsing and validation, flood-fill path checking, keyboard movement and a move counter.</p>
+        <ul class="tags"><li>MiniLibX</li><li>flood fill</li><li>parsing</li></ul>
+        <a class="link" href="https://github.com/tawbii/so_long" rel="noopener">View repository <span aria-hidden="true">→</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Systems</h3>
+        <ul class="tags big"><li>C</li><li>C++98</li><li>POSIX threads</li><li>Sockets &amp; poll()</li><li>Processes &amp; signals</li><li>Make</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Web</h3>
+        <ul class="tags big"><li>TypeScript</li><li>NestJS</li><li>React</li><li>Tailwind CSS</li><li>Socket.IO</li><li>TypeORM</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Infrastructure</h3>
+        <ul class="tags big"><li>Docker &amp; Compose</li><li>NGINX</li><li>PostgreSQL</li><li>MariaDB</li><li>Linux</li><li>Git</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About</h2>
+    <p>I'm Ali, a software engineering student at 42 Beirut. The 42 curriculum is project-based and peer-reviewed, so everything above was built from scratch: no frameworks for the low-level work, and a strict coding standard throughout.</p>
+    <p>I enjoy the parts of software that are usually hidden: how a shell runs a pipeline, how a server handles many clients from a single thread, how a renderer turns a grid into a 3D scene. I also like leading a team project end to end, from architecture decisions to review.</p>
+    <a class="btn primary" href="https://github.com/tawbii" rel="noopener">Say hello on GitHub</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Ali Tawbi</span>
+  <a href="https://github.com/tawbii" rel="noopener">github.com/tawbii</a>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
